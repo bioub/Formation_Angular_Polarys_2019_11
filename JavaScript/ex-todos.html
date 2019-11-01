@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todos</title>
+</head>
+<body>
+  <form class="todo-form">
+    <input type="checkbox" class="todo-toggle">
+    <input type="text" class="todo-input">
+    <button>+</button>
+  </form>
+  <div class="todo-list">
+    <!-- <div class="todo-row">
+      <input type="checkbox">
+      <span>Acheter du pain</span>
+      <button>-</button>
+    </div> -->
+  </div>
+  <script type="module">
+    /**
+     * @param {object} todo
+     * @param {string} todo.title
+     * @param {boolean} todo.completed
+     * @param {number} todo.id
+     */
+    function createTodo(todo) {
+      const rowElt = document.createElement('div');
+      rowElt.dataset.todoId = todo.id;
+      rowElt.className = 'todo-row';
+
+      // 1 - Créer et insérer une balise <input type="checkbox">
+      // la cocher en fonction de todo.completed
+      // -> HTMLInputElement (type et checked)
+
+      const spanElt = document.createElement('span');
+      spanElt.innerText = todo.title;
+
+      // 2 - Créer et insérer une balise <button>-</button>
+      // pour écrirer entre les balises ouvrantes/fermantes
+      // -> innerText / innerHTML
+      // Au clic du bouton (événement click) : supprimer la ligne (rowElt)
+      // -> parent.removeChild(enfant)
+      // https://developer.mozilla.org/fr/docs/Web/API/Node/removeChild
+      // -> parentNode (pour retrouver le parent d'un élément)
+
+      rowElt.appendChild(spanElt);
+      listElt.appendChild(rowElt);
+    }
+
+    const formElt = document.querySelector('.todo-form');
+    const listElt = document.querySelector('.todo-list');
+    const inputElt = document.querySelector('.todo-input');
+    const toggleElt = document.querySelector('.todo-toggle');
+
+    formElt.addEventListener('submit', (event) => {
+      event.preventDefault();
+      createTodo({
+        title: inputElt.value,
+        completed: false,
+        id: Math.random(),
+      });
+    });
+
+    // 3 - Ecouter le click de toggleElt
+    // et tout cocher/décocher
+    // -> document.querySelectorAll (retourne un NodeList tous les éléments d'un sélecteur CSS)
+    // -> il faut mettre true / false en bouclant en fonction de toggleElt.checked
+  </script>
+</body>
+</html>
