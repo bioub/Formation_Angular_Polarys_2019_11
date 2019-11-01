@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Todos</title>
 </head>
+
 <body>
+  <h2>Todos</h2>
   <form class="todo-form">
     <input type="checkbox" class="todo-toggle">
     <input type="text" class="todo-input">
@@ -34,9 +37,14 @@
       // 1 - Créer et insérer une balise <input type="checkbox">
       // la cocher en fonction de todo.completed
       // -> HTMLInputElement (type et checked)
+      const checkboxElt = document.createElement('input');
+      checkboxElt.type = 'checkbox';
+      checkboxElt.checked = todo.completed;
+      rowElt.appendChild(checkboxElt);
 
       const spanElt = document.createElement('span');
       spanElt.innerText = todo.title;
+      rowElt.appendChild(spanElt);
 
       // 2 - Créer et insérer une balise <button>-</button>
       // pour écrirer entre les balises ouvrantes/fermantes
@@ -45,14 +53,24 @@
       // -> parent.removeChild(enfant)
       // https://developer.mozilla.org/fr/docs/Web/API/Node/removeChild
       // -> parentNode (pour retrouver le parent d'un élément)
+      const buttonElt = document.createElement('button');
+      buttonElt.innerText = '-';
+      // buttonElt.addEventListener('click', (event) => {
+      //   // event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+      //   listElt.removeChild(rowElt);
+      // });
+      rowElt.appendChild(buttonElt);
 
-      rowElt.appendChild(spanElt);
       listElt.appendChild(rowElt);
     }
 
+    /** @type {HTMLFormElement} */
     const formElt = document.querySelector('.todo-form');
+    /** @type {HTMLDivElement} */
     const listElt = document.querySelector('.todo-list');
+    /** @type {HTMLInputElement} */
     const inputElt = document.querySelector('.todo-input');
+    /** @type {HTMLInputElement} */
     const toggleElt = document.querySelector('.todo-toggle');
 
     formElt.addEventListener('submit', (event) => {
@@ -64,10 +82,23 @@
       });
     });
 
+    listElt.addEventListener('click', (event) => {
+      if (event.target instanceof HTMLButtonElement) {
+        event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+      }
+    });
+
     // 3 - Ecouter le click de toggleElt
     // et tout cocher/décocher
     // -> document.querySelectorAll (retourne un NodeList tous les éléments d'un sélecteur CSS)
     // -> il faut mettre true / false en bouclant en fonction de toggleElt.checked
+    toggleElt.addEventListener('click', () => {
+      const checkboxes = listElt.querySelectorAll('input[type=checkbox]');
+      checkboxes.forEach((checkbox) => {
+        checkbox.checked = toggleElt.checked;
+      });
+    });
   </script>
 </body>
+
 </html>
