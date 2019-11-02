@@ -25,3 +25,6 @@ function setTimeoutSync(callback, delayMs) {
 // File d'attente (990ms) :
 // File d'attente (1000ms) : =>
 // File d'attente (1001ms) :
+
+// Jake Archibald: In The Loop - JSConf.Asia
+// https://www.youtube.com/watch?v=cCOL7MC4Pl0

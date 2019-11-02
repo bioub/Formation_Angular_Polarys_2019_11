@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "hello-angular"
+		},
+		{
+			"path": "todo-angular"
 		}
 	],
 	"settings": {}

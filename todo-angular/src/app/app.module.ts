@@ -3,19 +3,16 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HelloComponent } from './hello/hello.component';
-import { CounterComponent } from './counter/counter.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
-import { SelectComponent } from './select/select.component';
-
+import { FormComponent } from './form/form.component';
+import { ListComponent } from './list/list.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloComponent,
-    CounterComponent,
-    ContactFormComponent,
-    SelectComponent
+    FormComponent,
+    ListComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

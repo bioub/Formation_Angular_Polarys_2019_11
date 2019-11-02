@@ -1,0 +1,22 @@
+<todo-form (add)="onNewTodo($event)"></todo-form>
+<todo-list [items]="todos"></todo-list>
+
+<!--
+  Exercice :
+  Déclarer un Output toggle au niveau du form
+  Si on clique sur la checkbox, emettre cet event avec true ou false en param
+  Au niveau de App, écouter l'évent et affecter true ou false en fonction
+  à tous les éléments du tableau (clé completed du tableau)
+
+  Déclarer un Output delete au niveau de item ET list
+  Au click du bouton -, emettre d'item à supprimer
+  Au niveau List, écouter l'événement et emettre $event via l'output delete
+  Au niveau App écouter l'événement delete et supprimer la todos du tableau
+  (chercher sur google comment supprimer d'un tableau)
+
+  Exercice ++ :
+  Refaire le footer de http://todomvc.com/examples/backbone/#/
+  - Items left
+  - Filtres
+  - Clear completed
+-->

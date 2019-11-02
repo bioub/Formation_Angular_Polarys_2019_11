@@ -22,8 +22,8 @@
     /** @type {HTMLSpanElement} */
     const spanElt = document.querySelector('#output');
 
-    inputElt.addEventListener('input', () => {
-      spanElt.innerText = inputElt.value;
+    inputElt.addEventListener('input', (event) => {
+      spanElt.innerText = event.target.value;
     });
   </script>
 </body>

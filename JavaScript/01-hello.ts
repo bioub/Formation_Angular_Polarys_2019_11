@@ -1,11 +1,11 @@
-const prenoms = ['Jean', 'Pierre'];
+const noms = ['Jean', 'Pierre'];
 
-function hello(name) {
+function bonjour(name: string) {
   return `Hello ${name}`;
 }
 
-prenoms.forEach((prenom) => {
-  console.log(hello(prenom));
+noms.forEach((nom) => {
+  console.log(bonjour(nom));
 });
 
 // for (let i = 0; i < prenoms.length; i++) {

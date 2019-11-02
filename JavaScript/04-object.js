@@ -27,13 +27,13 @@ const MyMath = {
 const coords1 = {
   x: 1,
   y: 2,
-  sumXY() { return this.x + this.y; }
+  // sumXY() { return this.x + this.y; }
 };
 
 const coords2 = {
   x: 1,
   y: 2,
-  sumXY() { return this.x + this.y; }
+  // sumXY() { return this.x + this.y; }
 };
 
 console.log('coords1.x', coords1.x); // 1
@@ -63,6 +63,7 @@ console.log('coords1[\'z\']', coords1['z']); // 3
 // Coords.prototype.sumXY = function() { return this.x + this.y; }
 
 class Coords {
+  
   constructor(x, y) {
     // pseudo variable (créée au moment de l'appel)
     this.x = x;

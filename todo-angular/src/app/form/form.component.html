@@ -1,0 +1,5 @@
+<form (submit)="add.emit(todo)">
+  <input type="checkbox">
+  <input name="todo" [(ngModel)]="todo.title">
+  <button>+</button>
+</form>

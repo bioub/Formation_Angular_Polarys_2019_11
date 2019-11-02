@@ -1,0 +1,24 @@
+<!--
+    formElt.addEventListener('submit', ($event) => {
+        onSubmit($event);
+    });
+-->
+<form>
+    <p>
+        Prénom : <input type="text" name="prenom" [value]="contact.prenom"
+            (input)="contact.prenom = $event.target.value">
+    </p>
+    <p>
+        Prénom : <input type="text" name="prenom" [(ngModel)]="contact.prenom">
+    </p>
+    <p>
+        Nom : <input type="text" name="nom" [(ngModel)]="contact.nom">
+    </p>
+    <p *ngIf="contact.prenom !== ''">
+        Vous avez saisi : {{ contact.prenom }} {{ contact.nom }}
+    </p>
+    <!-- <p [ngClass]="{hidden: contact.prenom !== ''}">
+        Vous avez saisi : {{ contact.prenom }} {{ contact.nom }}
+    </p> -->
+    <button>Ajouter</button>
+</form>

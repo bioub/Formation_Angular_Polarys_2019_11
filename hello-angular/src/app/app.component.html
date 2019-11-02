@@ -1,0 +1,17 @@
+<h2>Angular</h2>
+<app-hello [name]="'Toto'"></app-hello>
+<app-hello name="Toto"></app-hello>
+<app-hello [name]="prenom"></app-hello>
+<app-counter></app-counter>
+<app-contact-form></app-contact-form>
+<app-select [items]="[1, 2, 3]"></app-select>
+<app-select [items]="prenoms" (selected)="prenom = $event"></app-select>
+{{prenom}}
+<!--
+    const items = prenoms;
+    const items = [1, 2, 3];
+
+    selectComp.addEventListener('selected', ($event) => {
+        this.prenom = $event;
+    })
+-->
