@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Todo } from '../todo';
 
 @Component({
   selector: 'todo-list',
@@ -7,9 +8,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  @Input() items = [];
+  @Input() items: Todo[] = [];
+  @Output() delete = new EventEmitter<Todo>();
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

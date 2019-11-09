@@ -1,5 +1,5 @@
-<todo-form (add)="onNewTodo($event)"></todo-form>
-<todo-list [items]="todos"></todo-list>
+<todo-form (add)="onNewTodo($event)" (toggle)="toggleTodos($event)"></todo-form>
+<todo-list [items]="filterTodos()" (delete)="onDeleteTodo($event)"></todo-list>
 
 <!--
   Exercice :

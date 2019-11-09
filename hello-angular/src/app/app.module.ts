@@ -7,6 +7,7 @@ import { HelloComponent } from './hello/hello.component';
 import { CounterComponent } from './counter/counter.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { SelectComponent } from './select/select.component';
+import { ClockComponent } from './clock/clock.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { SelectComponent } from './select/select.component';
     HelloComponent,
     CounterComponent,
     ContactFormComponent,
-    SelectComponent
+    SelectComponent,
+    ClockComponent
   ],
   imports: [
     BrowserModule,

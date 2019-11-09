@@ -10,4 +10,5 @@ export class SelectComponent {
   @Input() items = ['A', 'B', 'C'];
   @Output() selected = new EventEmitter();
 
+  
 }

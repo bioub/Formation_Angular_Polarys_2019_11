@@ -3,10 +3,14 @@
         onSubmit($event);
     });
 -->
+<h2>Ajouter un contact</h2>
 <form>
     <p>
         Prénom : <input type="text" name="prenom" [value]="contact.prenom"
             (input)="contact.prenom = $event.target.value">
+    </p>
+    <p>
+        Prénom : <input type="text" name="prenom" [ngModel]="contact.prenom" (ngModelChange)="contact.prenom = $event">
     </p>
     <p>
         Prénom : <input type="text" name="prenom" [(ngModel)]="contact.prenom">

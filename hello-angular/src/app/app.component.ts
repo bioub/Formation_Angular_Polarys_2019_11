@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   prenom = 'Jean'
   prenoms = ['Jean', 'Pierre', 'Eric']
+  showHorloge = true;
+  delay = 1000;
 }

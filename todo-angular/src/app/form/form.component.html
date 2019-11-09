@@ -1,5 +1,5 @@
-<form (submit)="add.emit(todo)">
-  <input type="checkbox">
+<form (submit)="handleSubmit(todo)">
+  <input type="checkbox" name="checked" [ngModel]="checked" (ngModelChange)="handleCheckboxClick($event)">
   <input name="todo" [(ngModel)]="todo.title">
   <button>+</button>
 </form>

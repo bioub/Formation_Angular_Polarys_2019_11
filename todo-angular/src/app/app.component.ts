@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Todo } from './todo';
 
 @Component({
   selector: 'todo-root',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  todos = [{
+  todos: Todo[] = [{
     id: Math.random(),
     title: 'Pain',
     completed: false
@@ -20,7 +21,26 @@ export class AppComponent {
     completed: false
   }];
 
-  onNewTodo(todo) {
-    this.todos.push({...todo});
+  filterTodos() {
+    // if (true) { // Condition si completed est cliqué
+    //   return this.todos.filter((t) => t.completed);
+    // }
+
+    return this.todos;
+  }
+
+  onNewTodo(todo: Todo) {
+    this.todos.push(todo);
+  }
+
+  toggleTodos(mustChecked: boolean) {
+    for (const todo of this.todos) {
+      todo.completed = mustChecked;
+    }
+  }
+
+  onDeleteTodo(item: Todo) {
+    const i = this.todos.indexOf(item);
+    this.todos.splice(i, 1);
   }
 }

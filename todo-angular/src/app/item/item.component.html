@@ -1,5 +1,5 @@
 <div>
   <input type="checkbox" [checked]="item.completed">
   <span>{{ item.title }}</span>
-  <button>-</button>
+  <button (click)="delete.emit(item)">-</button>
 </div>

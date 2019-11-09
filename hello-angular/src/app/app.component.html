@@ -15,3 +15,11 @@
         this.prenom = $event;
     })
 -->
+
+<button (click)="showHorloge = !showHorloge">Toggle Horloge</button>
+
+<input [(ngModel)]="delay" disabled>
+<button (click)="delay = delay + 1000">+</button>
+<button [disabled]="delay <= 1000" (click)="delay = delay - 1000">-</button>
+
+<app-clock [delay]="delay" *ngIf="showHorloge"></app-clock>
