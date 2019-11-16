@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms'
   ],
   exports: [
     ClockComponent,
-    CommonModule,
+    CommonModule, // exporte tous les exports de ce module
     FormsModule,
   ]
 })

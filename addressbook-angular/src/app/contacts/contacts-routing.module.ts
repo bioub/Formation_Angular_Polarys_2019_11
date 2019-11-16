@@ -9,7 +9,7 @@ const routes: Routes = [{
   path: 'contacts',
   component: ContactsComponent,
   children: [{
-    path: 'add',
+    path: 'add', // url complète /contacts/add
     component: ContactAddComponent,
   }, {
     path: ':contactId',

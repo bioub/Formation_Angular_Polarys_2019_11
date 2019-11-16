@@ -17,7 +17,7 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
     TopBarComponent
   ],
   imports: [
-    SharedModule,
+    SharedModule, // importe aussi Forms et CommonModule qui sont exportés par Shared
     BrowserModule,
     ContactsModule,
     AppRoutingModule, // en dernier pour NotFound
