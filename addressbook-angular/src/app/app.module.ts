@@ -8,6 +8,7 @@ import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { ContactsModule } from './contacts/contacts.module';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
     TopBarComponent
   ],
   imports: [
+    HttpClientModule,
     SharedModule, // importe aussi Forms et CommonModule qui sont exportés par Shared
-    BrowserModule,
+    BrowserModule, // BrowserModule contient le service Title, il faut donc l'importer qu'une seule fois dans AppModule
     ContactsModule,
     AppRoutingModule, // en dernier pour NotFound
   ],

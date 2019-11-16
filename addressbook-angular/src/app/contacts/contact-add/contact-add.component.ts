@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ContactService } from '../shared/contact.service';
 
 @Component({
   selector: 'app-contact-add',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactAddComponent implements OnInit {
 
-  constructor() { }
+  // private title: Title;
+
+  // constructor(title: Title) {
+  //   this.title = title;
+  //  }
+
+  // constructor(private title: Title) {
+  // }
+  constructor(private contactService: ContactService) {
+  }
 
   ngOnInit() {
+    //this.title.setTitle('Ajouter un contact');
   }
 
 }

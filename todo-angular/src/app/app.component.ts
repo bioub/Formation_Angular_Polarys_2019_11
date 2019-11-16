@@ -44,3 +44,12 @@ export class AppComponent {
     this.todos.splice(i, 1);
   }
 }
+
+
+// Exercice
+// Créer un service TodoService (à la racine de app)
+// Injecter TodoService dans AppComponent
+// Injecter HttpClient dans TodoService (pensez au module)
+// Ajouter une méthode getAll dans TodoService
+// Dans le ngOnInit de AppComponent, appeler cette méthode getAll
+// et ajouter les todos reçues au tableau
