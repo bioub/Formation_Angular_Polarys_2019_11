@@ -7,7 +7,12 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 const routes: Routes = [{
   path: '',
   component: HomeComponent,
-}, {
+},
+{
+  path: 'contacts',
+  loadChildren: () => import('./contacts/contacts.module').then((exports) => exports.ContactsModule)
+},
+{
   path: '**',
   component: NotFoundComponent,
 }];

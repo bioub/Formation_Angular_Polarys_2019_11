@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from './contact.model';
 
@@ -6,6 +6,8 @@ import { Contact } from './contact.model';
   providedIn: 'root'
 })
 export class ContactService {
+
+  add = new EventEmitter();
 
   constructor(private httpClient: HttpClient) { }
 

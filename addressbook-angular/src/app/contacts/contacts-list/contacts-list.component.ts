@@ -20,6 +20,10 @@ export class ContactsListComponent implements OnInit {
     this.contactService.getAll().subscribe((results) => {
       this.contacts = results;
     })
+
+    this.contactService.add.subscribe((contact) => {
+      this.contacts.push(contact);
+    })
   }
 
 }

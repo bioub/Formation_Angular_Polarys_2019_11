@@ -1,15 +1,17 @@
-<form>
+<form #form="ngForm" (submit)="form.valid && onSubmit()">
   <div class="form-group">
     <label for="nomComplet">Nom complet</label>
-    <input type="text" class="form-control" id="nomComplet" placeholder="Nom complet">
+    <input #name="ngModel" [(ngModel)]="contact.name" required name="name" type="text" class="form-control" [ngClass]="{'is-invalid': name.invalid && (name.touched || form.submitted)}" id="nomComplet" placeholder="Nom complet">
+    <div class="invalid-feedback" *ngIf="name.invalid && (name.touched || form.submitted)">Le prénom est obligatoire</div>
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" placeholder="Email">
+    <input #email="ngModel" [(ngModel)]="contact.email" email name="email" type="email" class="form-control" [ngClass]="{'is-invalid': email.invalid && (email.touched || form.submitted)}"  id="email" placeholder="Email">
+    <div class="invalid-feedback" *ngIf="email.invalid && (email.touched || form.submitted)">Le format de l'email est incorrect</div>
   </div>
   <div class="form-group">
     <label for="telephone">Téléphone</label>
-    <input type="tel" class="form-control" id="telephone" placeholder="Téléphone">
+    <input [(ngModel)]="contact.phone" name="phone" type="tel" class="form-control" id="telephone" placeholder="Téléphone">
   </div>
   <button type="submit" class="btn btn-primary">Ajouter</button>
 </form>

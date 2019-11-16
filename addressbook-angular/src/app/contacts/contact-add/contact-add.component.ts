@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ContactService } from '../shared/contact.service';
+import { Contact } from '../shared/contact.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact-add',
@@ -9,6 +11,7 @@ import { ContactService } from '../shared/contact.service';
 })
 export class ContactAddComponent implements OnInit {
 
+  contact = new Contact();
   // private title: Title;
 
   // constructor(title: Title) {
@@ -17,11 +20,19 @@ export class ContactAddComponent implements OnInit {
 
   // constructor(private title: Title) {
   // }
-  constructor(private contactService: ContactService) {
+  constructor(private contactService: ContactService, private router: Router) {
   }
 
   ngOnInit() {
     //this.title.setTitle('Ajouter un contact');
+  }
+
+
+  onSubmit() {
+    this.contactService.create(this.contact).subscribe((contact) => {
+      this.contactService.add.emit(contact);
+      this.router.navigate(['contacts']);
+    });
   }
 
 }

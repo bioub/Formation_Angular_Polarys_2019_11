@@ -20,6 +20,13 @@ export class ContactDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // ----------{contactId: '1'}--------{contactId: '7'}--------
+    // map((paramMap) => paramMap.get('contactId'))
+    // ----------1-----------------------7--------
+    // ----------------------------------------{id: 7, name:'Kurtis'}---{id: 1, name:'Leanne'}
+    // (contactId) => this.contactService.getById(contactId)
+    // ----------------------------------------{id: 7, name:'Kurtis'}-------------------
+
     this.activatedRoute.paramMap
       .pipe(
         map((paramMap) => paramMap.get('contactId')),
